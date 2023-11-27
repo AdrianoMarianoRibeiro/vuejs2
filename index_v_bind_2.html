@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Aula 01 - VueJS do jeito ninja!</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1><p>{{ title }}</p></h1>
+      <button class="btn" :class="btnClassBack">Voltar</button>
+      <button class="btn" :class="btnClassClear">Limpar</button>
+      <button class="btn" :class="btnClassSend">Enviar</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          title: "VueJS do jeito ninja!",
+          btnClassBack: "btn-secondary",
+          btnClassClear: {
+            "btn-danger": true,
+            "btn-sm": true
+          },
+          btnClassSend: ["btn-primary", "btn-lg"]
+        }
+      });
+    </script>
+  </body>
+</html>
