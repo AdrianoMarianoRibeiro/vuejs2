@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 01 - Vuejs do jeito ninja!</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1><p>{{ title }}</p></h1>
+      <label for="">Nome</label>
+      <input type="text" v-model="name" />
+
+      <br /><br />
+
+      <label for="">Telefone</label>
+      <input type="text" v-model="phone" />
+
+      <br /><br />
+
+      <label for="">Deseja receber nossas novidades?</label><br />
+      <input type="radio" value="Sim" v-model="news" /> Sim
+      <input type="radio" value="Não" v-model="news" /> Não
+
+      <br /><br />
+
+      <label for="Interesses"></label><br />
+      <input type="checkbox" value="Futebol" v-model="interests" /> Futebol
+      <br />
+      <input type="checkbox" value="Formula 1" v-model="interests" /> Formula 1
+      <br />
+      <input type="checkbox" value="Corrida" v-model="interests" />Corrida
+      <br />
+
+      <br /><br />
+
+      <label for="">Como nos conheceu?</label><br />
+      <select v-model="he_knew">
+        <option value="">Escolha</option>
+        <option value="Google">Google</option>
+        <option value="TV">TV</option>
+        <option value="Revista">Revista</option>
+      </select>
+
+      <br /><br />
+
+      <button>Enviar</button>
+
+      <hr />
+
+      Nome: {{ name }} <br />
+      Telefone: {{ phone }} <br />
+      Novidades: {{ news }} <br />
+      Interesses: {{ interests }} <br />
+      Como nos conheceu: {{ he_knew }} <br />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          title: "VueJS do jeito ninja!",
+          name: "",
+          phone: "",
+          news: "",
+          interests: [],
+          he_knew: "",
+        },
+      });
+    </script>
+  </body>
+</html>

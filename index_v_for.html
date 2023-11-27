@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 01 - Vuejs do jeito ninja!</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1><p>{{ title }}</p></h1>
+      <ul>
+        <li v-for="(item, key) in languages">{{ key }} - {{ item.name }}</li>
+      </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          title: "Vuejs do jeito ninja!",
+          languages: [
+            { name: "Javascript" },
+            { name: "PHP" },
+            { name: "C#" },
+            { name: "Java" },
+            { name: "Python" },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>
