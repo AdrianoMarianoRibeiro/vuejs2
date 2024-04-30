@@ -10,7 +10,7 @@
     <div id="app">
       <h1><p>{{ title }}</p></h1>
       <ul>
-        <li v-for="user in users">{{ user.name | toUpperCase() }}</li>
+        <li v-for="user in users">{{ user.name | truncate('5') }}</li>
       </ul>
       <button class="btn btn-primary" @click="send()">Enviar</button>
     </div>
@@ -31,6 +31,10 @@
         filters: {
           toUpperCase(str) {
             return str.toUpperCase();
+          },
+
+          truncate(str, length) {
+            return str.substring(0, length);
           }
         },
         methods: {
