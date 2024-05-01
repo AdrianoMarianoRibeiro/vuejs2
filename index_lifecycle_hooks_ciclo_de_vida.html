@@ -10,7 +10,6 @@
     <div id="app">
       <h1><p>{{ title }}</p></h1>
       {{ name }} <br>
-      {{ toUpperCase }}
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -18,25 +17,42 @@
     <script>
       var app = new Vue({
         el: "#app",
+
+        beforeCreate() {
+          console.log('beforeCreate');
+          console.log('title', this.title);
+          console.log('el', this.$el);
+        },
+
+        created() {
+          console.log('created');
+          console.log('title', this.title);
+          console.log('el', this.$el);
+        },
+
+        beforeMount() {
+          console.log('beforeMount');
+          console.log('title', this.title);
+          console.log('el', this.$el);
+        },
+
+        mounted() {
+          console.log('beforeMount');
+          console.log('title', this.title);
+          console.log('el', this.$el);
+        },
+
+        beforeUpdate() {
+          console.log('beforeUpdate');
+        },
+
+        updated() {
+          console.log('updated');
+        },
+
         data: {
           title: "VueJS do jeito ninja!",
           name: "Jon Snow"
-        },
-
-        computed: {
-            toUpperCase() {
-                return this.name.toUpperCase();
-            }
-        },
-
-        watch: {
-            name(newValue, oldValue) {
-                console.log("newValue: ", newValue);
-                console.log("oldValue: ", oldValue);
-            }
-        },
-
-        methods: {
         }
       });
     </script>
